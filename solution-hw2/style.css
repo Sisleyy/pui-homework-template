@@ -26,6 +26,7 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
   color: black;
+  position: relative;
 }
 
 #logo {
@@ -111,7 +112,7 @@ hr {
 .heading {
   position: absolute;
   top:130px;
-  right:600px;
+  right:400px;
   font-size: 20px; 
 }
 
