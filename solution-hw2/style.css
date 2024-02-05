@@ -170,7 +170,7 @@ hr {
   display: grid;
   grid-template-columns: 610px 260px;
   grid-template-rows: 220px 110px 110px 149px;
-  grid-gap: 10px;
+  grid-gap: 20px;
   justify-content:center;
   max-width: 800px;
   max-height: 610px;
@@ -199,6 +199,7 @@ hr {
   align-items: center;
   padding: 0px;
   margin-left: 115px;
+  margin-bottom: 28px;
   font-weight: bold;
   align-self:end;
 }
