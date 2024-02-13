@@ -12,7 +12,6 @@ const packSizeOptions = {
   12: 10,
 };
 
-
 function updatePrice(glazing, packSize) {
   const basePrice = 2.49;
   const glazingPrice = glazingOptions[glazing];
@@ -29,7 +28,6 @@ function glazingChange(element) {
   updatePrice(glazing, packSize);
 }
 
-
 function packSizeChange(element) {
   const packSize = element.value;
   const glazingSelect = document.getElementById("glazingOptions");
@@ -37,7 +35,6 @@ function packSizeChange(element) {
 
   updatePrice(glazing, packSize);
 }
-
 
 function populateDropdown(selectElementId, options) {
   const selectElement = document.getElementById(selectElementId);
