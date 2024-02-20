@@ -1,3 +1,4 @@
+// Define price adaptations for each glazing option.
 const glazingOptions = {
   "Keep original": 0.0,
   "Sugar milk": 0.0,
@@ -5,6 +6,7 @@ const glazingOptions = {
   "Double chocolate": 1.5,
 };
 
+// Define price multipliers for each pack size option.
 const packSizeOptions = {
   1: 1,
   3: 3,
@@ -12,6 +14,7 @@ const packSizeOptions = {
   12: 10,
 };
 
+//update and compute price
 function updatePrice(glazing, packSize) {
   const basePrice = info.basePrice;
   const glazingPrice = glazingOptions[glazing];
@@ -20,14 +23,16 @@ function updatePrice(glazing, packSize) {
   document.getElementById("price").textContent = `$${newPrice.toFixed(2)}`;
 }
 
+//update glazing
 function glazingChange(element) {
   const glazing = element.value;
   const packSizeSelect = document.getElementById("packsizeOptions");
   const packSize = packSizeSelect.value;
 
-  updatePrice(glazing, packSize);
+  updatePrice(glazing, packSize); // Calls updatePrice with the new pack size.
 }
 
+//update packsize
 function packSizeChange(element) {
   const packSize = element.value;
   const glazingSelect = document.getElementById("glazingOptions");
@@ -36,6 +41,7 @@ function packSizeChange(element) {
   updatePrice(glazing, packSize);
 }
 
+//populate dropdown
 function populateDropdown(selectElementId, options) {
   const selectElement = document.getElementById(selectElementId);
   const optionNames = Object.keys(options);
@@ -48,14 +54,14 @@ function populateDropdown(selectElementId, options) {
   }
 }
 
+//
 document.addEventListener("DOMContentLoaded", function () {
   populateDropdown("glazingOptions", glazingOptions);
   populateDropdown("packsizeOptions", packSizeOptions);
   updatePrice("Keep original", "1");
 });
 
-//Index
-//update page according to url
+// Retrieve the roll type from the URL parameters and update the page content
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get("roll");
@@ -65,32 +71,35 @@ headerElement.innerText = rollType + " cinnamon roll";
 const info = rolls[rollType];
 const cinnamonImage = document.querySelector(".detailpic");
 cinnamonImage.src = "../assets/products/" + info.imageFile;
-//create cart array
 
-
+// Define the Roll class for creating objects
 class Roll {
   constructor(rollType, rollGlazing, packSize, basePrice) {
-      this.type = rollType;
-      this.glazing = rollGlazing;
-      this.size = packSize;
-      this.basePrice = basePrice;
+    this.type = rollType;
+    this.glazing = rollGlazing;
+    this.size = packSize;
+    this.basePrice = basePrice;
   }
 }
-
+//create empty cart array
 let cart = [];
 
-document.getElementById('addtocart').addEventListener('click', addToCart);
+// Add event listener for the "Add to Cart" button.
+document.getElementById("addtocart").addEventListener("click", addToCart);
 
 function addToCart() {
-  const rollType = params.get('roll'); 
-  const glazingSelect = document.getElementById('glazingOptions');
+  const rollType = params.get("roll");
+  const glazingSelect = document.getElementById("glazingOptions");
   const rollGlazing = glazingSelect.value;
-  const packSizeSelect = document.getElementById('packsizeOptions');
+  const packSizeSelect = document.getElementById("packsizeOptions");
   const packSize = packSizeSelect.value;
-  const basePrice = info.basePrice; 
+  const basePrice = info.basePrice;
 
+  // Create a new Roll object with the current selections
   const newRoll = new Roll(rollType, rollGlazing, packSize, basePrice);
+
+  // Add the new Roll object to the cart array.
   cart.push(newRoll);
 
-  console.log(cart); 
+  console.log(cart);
 }
