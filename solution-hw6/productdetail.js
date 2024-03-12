@@ -1,6 +1,3 @@
-// Assuming rollsData.js is structured correctly and included before this script
-
-// Define price adaptations for each glazing option
 const glazingOptions = {
   "Keep original": 0.0,
   "Sugar milk": 0.0,
@@ -8,7 +5,6 @@ const glazingOptions = {
   "Double chocolate": 1.5,
 };
 
-// Define price multipliers for each pack size option
 const packSizeOptions = {
   1: 1,
   3: 3,
@@ -16,11 +12,10 @@ const packSizeOptions = {
   12: 10,
 };
 
-// Initialize or retrieve cart
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Attempt to retrieve the cart from local storage
+  //retrieve the cart from local storage
   populateDropdown("glazingOptions", glazingOptions);
   populateDropdown("packsizeOptions", packSizeOptions);
   updateCartNumber();
@@ -31,7 +26,7 @@ function updatePageContent() {
   const queryString = window.location.search;
   const params = new URLSearchParams(queryString);
   const rollType = params.get("roll");
-  
+
   if (!rolls[rollType]) {
     console.error("Roll type is not found.");
     return;
@@ -66,34 +61,35 @@ function populateDropdown(selectElementId, options) {
   }
 }
 
-// Use the corrected Roll class as per your requirement
-
-
-
-document.getElementById("addtocart").addEventListener("click", function() {
+document.getElementById("addtocart").addEventListener("click", function () {
   const rollType = new URLSearchParams(window.location.search).get("roll");
   const glazingSelect = document.getElementById("glazingOptions");
   const packSizeSelect = document.getElementById("packsizeOptions");
-  const newRoll = new Roll(rollType, glazingSelect.value, packSizeSelect.value, rolls[rollType].basePrice);
-  
+  const newRoll = new Roll(
+    rollType,
+    glazingSelect.value,
+    packSizeSelect.value,
+    rolls[rollType].basePrice
+  );
+
   cart.push(newRoll);
-  localStorage.setItem('cart', JSON.stringify(cart));
-  
+  localStorage.setItem("cart", JSON.stringify(cart));
+
   updateCartNumber();
-  console.log('Cart:', cart);
+  console.log("Cart:", cart);
 });
 
 function updateCartNumber() {
-  const cartNumberElement = document.querySelector('.cart-number');
+  const cartNumberElement = document.querySelector(".cart-number");
   cartNumberElement.textContent = cart.length;
 }
 
-// Corrected Roll class definition to match requirement
 class Roll {
-    constructor(rollType, rollGlazing, packSize, rollPrice) {
-        this.type = rollType;
-        this.glazing = rollGlazing;
-        this.size = packSize;
-        this.basePrice = rollPrice;
-    }
+  constructor(rollType, rollGlazing, packSize, rollPrice) {
+    this.type = rollType;
+    this.glazing = rollGlazing;
+    this.size = packSize;
+    this.basePrice = rollPrice;
+  }
 }
+
