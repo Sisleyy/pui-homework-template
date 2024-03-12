@@ -93,3 +93,7 @@ function updateCartNumber() {
 document.addEventListener("DOMContentLoaded", () => {
   populateCart();
 });
+
+window.addEventListener('beforeunload', () => {
+    localStorage.removeItem('cart'); // Remove the 'cart' key from local storage
+});
