@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Gallery</title>
+    <link rel="stylesheet" href="../solution-hw6/style.css">
+    <script src="../solution-hw6/rollsData.js" defer></script>
+</head>
+
+<body onload="updateCartNumber()">
+    <header>
+        <div class="logoline">
+            <div class="logopic">
+                <a href="../solution-hw6/index.html">
+                    <img src="../assets/logo/logo-01.svg" alt="Bun Bun Bake Shop Logo" id="logo">
+                </a>
+            </div>
+            <div class="line">
+                <hr>
+            </div>
+            <div class="navigation">
+                <a href="../solution-hw6/index.html" class="nav-item">
+                    <h2>PRODUCTS</h2>
+                </a>
+                <a href="../solution-hw6/cart.html" class="nav-item">
+                    <h2><mark>CART <span class="cart-number">0</span></mark></h2>
+                    <a href="../solution-hw6/cart.html" class="nav-item cart-link"></a>
+                </a>
+            </div>
+            <div class="heading">
+                <h1>Shopping Cart</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- cart  -->
+    <main class="cartmain">
+        <div class="cartgrid">
+            <!-- Template for cart items -->
+            <template id="cart-item-template">
+                <div class="cart-item">
+                    <div class="product-pic">
+                        <img src="" alt="Product Image" />
+                        <p class="remove-item">Remove</p>
+                    </div>
+                    <div class="product-description">
+                        <p>Product Name</p>
+                        <p>Glazing: </p>
+                        <p>Pack Size: </p>
+                    </div>
+                    <div class="product-price">
+                        <p>Price</p>
+                    </div>
+                </div>
+            </template>            
+        </div>
+        <br />
+        <hr class="lastline" />
+        <div class="totalcart">
+            <p>Total</p>
+            <p id="price">$0.00</p> 
+        </div>
+        <p class="checkout">Checkout</p>
+    </main>
+
+    <script src="../solution-hw6/cart.js" defer></script>
+
+</body>
+
+</html>

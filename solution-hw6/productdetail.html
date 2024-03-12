@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../solution-hw6/style.css">
+    <script src="../solution-hw6/rollsData.js" defer></script>
+    <script src="../solution-hw6/productdetail.js" defer></script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../solution-3/style.css">
+</head>
+
+<body>
+    <header>
+        <div class=logoline>
+            <div class=logopic>
+                <a href="../solution-hw6/index.html">
+                    <img src="../assets/logo/logo-01.svg" alt="Bun Bun Bake Shop Logo" id="logo">
+                </a>
+            </div>
+            <div class="line">
+                <hr>
+            </div>
+            <div class="navigation">
+                <a href="../solution-hw6/index.html" class="nav-item">
+                    <h2><mark>PRODUCTS</mark></h2>
+                </a>
+                <a href="../solution-hw6/cart.html" class="nav-item">
+                    <h2>CART <span class="cart-number">0</span></h2>
+                    <a href="../solution-hw6/cart.html" class="nav-item cart-link">
+                    </a>
+                </a>
+            </div>
+            <div class="heading">
+                <h1>Our hand-made cinnamon rolls</h1>
+            </div>
+        </div>
+
+    </header>
+    <!-- Prouducts -->
+    <main>
+        <div class=detailgrid>
+            <div class="detail">
+                <img class=detailpic src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll">
+            </div>
+            <div class="description">
+                <p>Customize our delicious, hand-made cinammon roll to your liking!</p>
+            </div>
+            <div class="glazingdrop">
+                <label for="glazing"><br>Glazing:</br></label>
+                <br>
+                <select id="glazingOptions" onchange="glazingChange(this)">
+                </select>
+            </div>
+            <div class=packsizedrop>
+                <label for="packsize"><br>Pack Size:</br></label>
+                <br>
+                <select id="packsizeOptions" onchange="packSizeChange(this)">
+                </select>
+            </div>
+            <div class="total">
+                <p id="price">$2.49</p>
+                <p id="addtocart">Add to Cart</p>
+            </div>
+        </div>
+
+        </div>
+
+</body>
+
+</html>
