@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Sounds</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <video autoplay muted loop id="background-video" class="video-background">
+        <source src="./icons/fireplacevid.mp4" type="video/mp4">
+    </video>
+    <div class="sound-controls">
+        <div class="icon-with-slider">
+            <img src="./icons/fireplaceicon.png" alt="fire" class="sound-icon" data-sound="fire">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="fire">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/talking.png" alt="talk" class="sound-icon" data-sound="talk">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="talk">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/jazz.png" alt="jazz" class="sound-icon" data-sound="jazz">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="jazz">
+        </div>
+        <!-- Add more icons with sliders as needed -->
+    </div>
+    <a href="./index.html" class="back-to-menu">Back to menu</a>
+    <script src="./app.js"></script>
+</body>
+</html>

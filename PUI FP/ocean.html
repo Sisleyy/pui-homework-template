@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Sounds</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <video autoplay muted loop id="background-video" class="video-background">
+        <source src="./icons/oceanvid.mp4" type="video/mp4">
+    </video>
+    <div class="sound-controls">
+        <div class="icon-with-slider">
+            <img src="./icons/wave.png" alt="wave" class="sound-icon" data-sound="ocean">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="ocean">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/thunderstorm.png" alt="thunder" class="sound-icon" data-sound="thunder">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="thunder">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/water.png" alt="water" class="sound-icon" data-sound="water">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="water">
+        </div>
+        <!-- Add more icons with sliders as needed -->
+    </div>
+    <a href="./index.html" class="back-to-menu">Back to menu</a>
+    <script src="./app.js"></script>
+</body>
+</html>
