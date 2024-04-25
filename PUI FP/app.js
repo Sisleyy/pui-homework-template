@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const soundIcons = document.querySelectorAll('.sound-icon');
     const volumeSliders = document.querySelectorAll('.volume-slider');
 
-    // Initialize sound objects
+    //  sound objects
     const sounds = {
         bird: new Audio('./Media/Sounds/birds.mp3'),
         rain: new Audio('./Media/Sounds/rain.mp3'),
@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         talk: new Audio('./Media/Sounds/talk.mp3'),
         fire: new Audio('./Media/Sounds/fireplace.mp3'),
 
-        // Add more sounds here
     };
 
     soundIcons.forEach(icon => {
