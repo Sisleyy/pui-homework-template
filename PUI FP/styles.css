@@ -19,7 +19,7 @@ body, html {
         background-repeat:repeat;
         background-position: center; 
         background-attachment:local;
-        z-index:0;
+        z-index: -1;
 }
 
 
@@ -113,7 +113,8 @@ section {
     background-repeat:repeat;
     z-index: 0;
     opacity:95% ;
-    filter: brightness(65%)
+    filter: brightness(65%);
+    filter: grayscale(ellipse);
 
   }
 
@@ -138,11 +139,6 @@ section {
     z-index: 2;
 
 }
-
-
-
-
-
 
 
 .card-container {
@@ -184,7 +180,8 @@ section {
 }
 
 .icon {
-    opacity: 50%;
+    opacity: 70%;
+    filter: brightness(70%);
     width: 100%; 
     height: 100%; 
     background-size: cover;
