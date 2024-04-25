@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ocean: new Audio('./Media/Sounds/ocean.mp3'),
         jazz: new Audio('./Media/Sounds/jazz.mp3'),
         talk: new Audio('./Media/Sounds/talk.mp3'),
-        fire: new Audio('./Media/Sounds/fire.mp3'),
+        fire: new Audio('./Media/Sounds/fireplace.mp3'),
 
         // Add more sounds here
     };
