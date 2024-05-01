@@ -9,7 +9,44 @@ body, html {
     background-color: rgba(27, 26, 26, 0.818) 0%;
     z-index: 2;
 }
+/* nav bar*/
+.nav-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.15);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    
+}
 
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-family: "Antic Didone", serif; 
+    font-size: 24px; 
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin-bottom: 40px; 
+}
+
+.nav-menu.active {
+    transform: translateX(0);
+}
 .gif-background{
         background-image: url('./icons/p2F.gif'); 
         width:100%;
@@ -21,7 +58,6 @@ body, html {
         background-attachment:local;
         z-index: -1;
 }
-
 
 header {
     width: 100%;
@@ -39,6 +75,7 @@ header {
     top: 20px;
     left: 20px;
     cursor: pointer;
+    z-index: 100;
 }
 
 .menu-icon .line {
@@ -46,37 +83,31 @@ header {
     height: 5px;
     background-color: white;
     margin: 6px 0;
-    transition: 0.4s;
+    transition: 0.1s;
+}
+
+.menu-icon.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .title {
     font-size: 85px;
-    color: rgba(247, 244, 244, 0.733);
+    color: rgba(247, 244, 244, 0.959);
     margin: 0;
-    text-shadow: 2px 2px 50px rgba(65, 63, 63, 0.913);
+    text-shadow: 5px 5px 50px rgb(29, 28, 28);
     z-index: 1;
 }
 
 .scroll-instruction {
     font-size: 45px;
-    color:  rgba(247, 244, 244, 0.733);
-    text-shadow: 2px 2px 20px rgba(65, 63, 63, 0.63);
+    color:  rgba(98, 96, 96, 0.741);
+    text-shadow: 5px 5px 50px rgba(246, 244, 244, 0.95);
     margin-top: 20px;
     opacity: 0.7;
+    z-index: 10;
 }
 
-.halo {
-    position: absolute;
-    width: 1000px; /* Width of the oval */
-    height: 600px; /* Height of the oval */
-    background: radial-gradient(ellipse at center, rgba(194, 194, 194, 0.411) 0%, rgba(252, 251, 251, 0.253) 80%);
-    border-radius: 60%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg); /* Adjust the angle here */
-    box-shadow: 0 0 80px rgba(226, 220, 220, 0.717);
-    z-index: 0;
-}
 
 section {
     display: grid;
@@ -85,12 +116,13 @@ section {
     min-height: 100vh;
 }
 
-/*Css animation scroll*/
+/*animation scroll*/
 
 .hidden {
     opacity: 0;
     filter: blur(5px);
-    transition: all 5s;
+    transition: all 2s;
+    transform: translateX(-100%);
 
 }
 @media(prefers-reduced-motion){
@@ -103,20 +135,28 @@ section {
 .show {
     opacity: 1;
     filter: blur(0px);
-    transition: all 5s;
+    transition: all 2s;
+    transform: translateX(0);
+}
 
+.secpage{
+    display: grid;
+    place-items: center;
+    align-content: center;
 }
 
 #cardvideo {
-    height: 100%;
+    position:absolute;
+    top: 100%; 
+    left: 0;
     width: 100%;
-    background-repeat:repeat;
-    z-index: 0;
-    opacity:95% ;
-    filter: brightness(65%);
-    filter: grayscale(ellipse);
-
-  }
+    height: 100vh; 
+    object-fit: cover;  
+    z-index: 0;  
+    opacity: 95%;
+    filter: brightness(65%) grayscale(0.4);
+    background-position: center;
+}
 
 .video-background {
     position: absolute;
@@ -124,8 +164,8 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This will cover the section area without stretching */
-    z-index: -1; /* Ensures video stays in the background */
+    object-fit: cover; 
+    z-index: -1;
 }
 
   .hidden h2{
@@ -136,7 +176,7 @@ section {
     text-shadow: 2px 49px 40px rgba(27, 26, 26, 0);
     margin-top: 20px;
     opacity: 0.7;
-    z-index: 2;
+    z-index: 10;
 
 }
 
@@ -160,11 +200,14 @@ section {
     justify-content: center;
     padding: 20px;
     cursor: pointer;
-    transition: transform 0.4s ;
+    transition: transform 0.2s ;
     overflow: hidden;
     position: relative;
     text-decoration: none;
+    
 }
+
+
 
 .card:hover {
     transform: translateY(-8px);
@@ -217,7 +260,7 @@ section {
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: 1;
+    z-index: 0;
     filter: brightness(35%)
     opacity(88%)
 }
@@ -228,32 +271,33 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 100px 200px; 
+    padding: 100px;  
 }
 
 .icon-with-slider {
-    margin: 80px;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
     text-shadow: 0 0 80px rgba(226, 220, 220, 0.717);
 }
 
 .volume-slider::-webkit-slider-thumb {
-    background: rgba(36, 34, 34, 0.79); /* Replace with the color you want */
+    background: rgba(36, 34, 34, 0.79); 
 }
+
 
 .sound-icon {
     width: 100px;
     height: 100px;
     cursor: pointer;
-    padding: 20px;
-
-
+    margin-bottom: 30px; 
 }
 
 .volume-slider {
-    width: 100%;
+    width: 150px;
 }
 
 .back-to-menu {
@@ -268,5 +312,227 @@ section {
     border-radius: 5px;
 }
 
+.create-button {
+    position: absolute;
+    top: 700px;
+    z-index: 2;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.516);
+    padding: 10px;
+    background-color: #b7b6b609;
+    border-radius: 10px;
+    font-size: 30px;
+    align-content: center;
+}
 
+.create-button:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 2px 20px rgba(247, 243, 243, 0.196);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* about page */
+ .hiddenabout h3{
+    font-size: 55px;
+    color: rgba(255, 255, 255, 0.453);
+    margin-top: 200px;
+    z-index: 3;
+
+ }
+
+ .hiddenabout p{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.367);
+    margin-top:-100px;
+    z-index: 3;
+    text-align:center;
+    padding: 100px;
+
+ }
+
+ .hiddenabout {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 2s;
+}
+
+@media (prefers-reduced-motion) {
+    .hiddenabout {
+        transition: none;
+    }
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+    transition: all 2s;
+}
+
+#aboutpage{
+    height:fit-content;
+}
+
+/* responsiveness*/
+@media (min-width: 768px) {
+    .card {
+        width: 300px;
+        height: 400px;
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: 250px;
+        height: 350px;
+    }
+}
+@media (max-width: 767px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 54px;
+        text-align: center;
+    }
+    .scroll-instruction {
+        font-size: 24px;
+    }
+}
+/*  small screens */
+@media (max-width: 576px) {
+    .nav-menu {
+        width: 70%;  
+        transform: translateX(-100%); 
+        transition: transform 0.3s ease-in-out;
+        background: rgba(0, 0, 0, 0.746);
+    }
+
+    .nav-menu.active {
+        transform: translateX(0); 
+    }
+
+    .nav-menu ul {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%; 
+        padding: 20px; 
+    }
+
+    .nav-menu li {
+        margin-bottom: 20px; 
+    }
+
+    .nav-menu a {
+        font-size: 24px; 
+    }
+
+    .menu-icon {
+        display: block; 
+        z-index: 1001; 
+    }
+
+
+    .card{
+        height: 150px;
+        width: 180px;
+    }
+
+    .card-title{
+        font-size: 18px;
+    }
+
+    .hidden h2{
+        font-size: 24px;
+        margin-top: -80px;
+        align-content: center;
+        position:relative;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: center;
+        gap: 50px; 
+        z-index: 1;
+    }
+
+    .create-button {
+        position:fixed;
+        top:93%;
+        z-index: 2;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.516);
+        padding: 10px;
+        background-color: #b7b6b609;
+        border-radius: 10px;
+        font-size: 20px;
+        align-content:center;
+    }
+
+
+
+    .back-to-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+        text-decoration: none;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .sound-controls {
+        flex-direction: column; 
+        padding: 20px; 
+        grid-gap: 20px; 
+        align-items: center; 
+        width: 80%; 
+    }
+
+    .icon-with-slider {
+        width: 100%; 
+    }
+
+    .sound-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .volume-slider {
+        width: 100%; 
+    }
+
+    .menu-icon {
+        display: block;
+        position: fixed; 
+        top: 20px;
+        left: 20px;
+    }
+
+    .title, .scroll-instruction, .card-title {
+        font-size: 24px; 
+    }
+
+    .hiddenabout p{
+        font-size: 24px;
+        display: flex;
+        padding: 20px;
+        margin-top:10%;
+    }
+
+    .hiddenabout h3{
+        font-size: 28px;
+        display: flex;
+        margin-top:30%;
+        
+    }
+}
 

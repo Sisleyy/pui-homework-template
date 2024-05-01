@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Space</title>
+    <link rel="stylesheet" href="./styles.css">
+    <div class="menu-icon" id="menuIcon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</head>
+<body>
+    <video autoplay muted loop id="background-video" class="video-background">
+        <source src="./icons/createspace.mp4" type="video/mp4">
+    </video>
+    <div class="nav-menu" id="sidebar" onclick = show()>  
+        <ul id = "menutext">
+            <li><a href="../PUI FP/index.html">Home</a></li>
+            <li><a href="../PUI FP/index.html#secpage">Choose Your Space</a></li>
+            <li><a href="#create-your-space">Create Your Space</a></li>
+            <li><a href="./about.html">About</a></li>
+        </ul>
+    </div>
+    <div class="sound-controls">
+        <div class="icon-with-slider">
+            <img src="./icons/wave.png" alt="wave" class="sound-icon" data-sound="ocean">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="ocean">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/thunderstorm.png" alt="thunder" class="sound-icon" data-sound="thunder">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="thunder">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/water.png" alt="water" class="sound-icon" data-sound="water">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="water">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/fireplaceicon.png" alt="fire" class="sound-icon" data-sound="fire">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="fire">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/talking.png" alt="talk" class="sound-icon" data-sound="talk">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="talk">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/jazz.png" alt="jazz" class="sound-icon" data-sound="jazz">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="jazz">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/bird.png" alt="Bird" class="sound-icon" data-sound="bird">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="bird">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/rain.png" alt="Rain" class="sound-icon" data-sound="rain">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="rain">
+        </div>
+        <div class="icon-with-slider">
+            <img src="./icons/creek.png" alt="Rain" class="sound-icon" data-sound="creek">
+            <input type="range" min="0" max="100" value="0" class="volume-slider" data-sound="creek">
+        </div> 
+       
+    </div>
+    <a href="./index.html#secpage" class="back-to-menu">Back to menu</a>
+    <script src="./app.js"></script>
+</body>
+</html>

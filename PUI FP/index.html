@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serenity Soundspace</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script defer src = "./app.js"></script>
+    <link rel="stylesheet" href="./styles.css">    
+    <script defer src="./app.js"></script>
 </head>
+
+
 <body>
     <div class="gif-background">
         <header>
-            <div class="halo"></div> 
-            <div class="menu-icon">
+            <div class="menu-icon" id="menuIcon">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
+            <div class="halo"></div>
             <h1 class="title">Serenity Soundspace</h1>
             <p class="scroll-instruction">Scroll to Start</p>
         </header>
     </div>
-        <section class = "hidden">
+   
+    <div class="nav-menu" id="sidebar" >  
+        <ul id = "menutext">
+            <li><a href="../PUI FP/index.html">Home</a></li>
+            <li><a href="../PUI FP/index.html#secpage">Choose Your Space</a></li>
+            <li><a href="./createspace.html">Create Your Space</a></li>
+            <li><a href="./about.html">About</a></li>
+        </ul>
+    </div>
+    <section id = "secpage">
+        <video autoplay muted loop id="cardvideo" class="video-background">
+            <source src="./icons/galaxyvid.mp4" type="video/mp4">
+        </video>
+        <section class="hidden">
             <h2>CHOOSE YOUR SPACE</h2>
-            <video autoplay muted loop id="cardvideo" class="video-background">
-                <source src="./icons/galaxyvid.mp4" type="video/mp4">
-            </video>
+        
             <div class="card-container">
                 <a href="./forest.html" class="card">
-                    <div class="icon forest-icon" >
+                    <div class="icon forest-icon">
                     </div>
                     <div class="card-title">FOREST</div>
                 </a>
@@ -40,7 +54,10 @@
                     <div class="card-title">FIREPLACE</div>
                 </a>
             </div>
-        
+            <a href="./createspace.html" class="create-button">Or.. Create Your Space</a>
         </section>
+       
+    </section>
 </body>
+
 </html>
